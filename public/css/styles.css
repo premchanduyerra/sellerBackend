@@ -1,0 +1,15 @@
+.card{
+    margin: 2rem auto ;
+    width: 80%;
+}
+.card-title{
+    text-align: center;
+}
+.dropdown{
+    position: relative;
+}
+#cars{
+    height: 40px;
+    width: 80%;
+    border-radius: 0.25rem;
+}

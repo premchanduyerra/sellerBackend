@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action="/products" method="post">
+
+
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Seller product upload</h5>
+       
+          <div class="form-group">
+            <label for="productName">product name</label>
+            <input type="text" class="form-control" id="productName" placeholder="Enter productName">
+          </div>
+
+          <div class="form-group">
+            <label for="cars">Product Type : </label>
+            <br>
+            <select name="productType" id="productType" onmousedown="this.value='';"
+              onchange="setGstField(this.value);">
+              <option value="BrandNew"> Brand new</option>
+              <option value="AlmostNew">Almost new</option>
+              <option value="UsedOrSecondHand">Used or Second hand</option>
+              <option value="Refurbished">Refurbished</option>
+            </select>
+            <br></div>
+
+          <div class="form-group">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">Upload Image1</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" name="image1" class="custom-file-input" id="image1"
+                  aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" for="image1">Choose file</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon02">Upload Image2</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" name="image2" class="custom-file-input" id="image2"
+                  aria-describedby="inputGroupFileAddon02">
+                <label class="custom-file-label" for="Image3">Choose file</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon03">Upload Image3</span>
+              </div>
+              <div class="custom-file">
+                <input type="file" name="image3" class="custom-file-input" id="image3"
+                  aria-describedby="inputGroupFileAddon03">
+                <label class="custom-file-label" for="image3">Choose file</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-group">
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="Type" value="sell" aria-label="Radio button for following text input">
+                </div>
+              </div>
+              <input type="text" class="form-control" placeholder="Sell" aria-label="Text input with radio button"
+                readonly>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="Type" value="buy" aria-label="Radio button for following text input">
+                </div>
+              </div>
+              <input type="text" class="form-control" placeholder="Buy" aria-label="Text input with radio button"
+                readonly>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="radio" name="Type" value="rentOnOwm" aria-label="Radio button for following text input">
+                </div>
+              </div>
+              <input type="text" class="form-control" placeholder="Rent-On-Own"
+                aria-label="Text input with radio button" readonly>
+            </div>
+
+
+          </div>
+
+
+
+
+          <div class="form-group">
+            <label for="FixedPrice">Fixed Price</label>
+            <input type="text" name="FixedPrice" class="form-control" id="FixedPrice"
+              placeholder="Fixed price(for sell) or Monthly Rent  & deposit (for rentals)">
+          </div>
+
+          <div class="form-group">
+            <label for="monthlyRent">Monthly Rent</label>
+            <input type="text" name="monthlyRent" class="form-control" id="monthlyRent"
+              placeholder=" Monthly Rent">
+          </div>
+
+          <div class="form-group">
+            <label for="noOfItems">number of Items</label>
+            <input type="text" class="form-control" name="noOfItems" id="noOfItems" placeholder="Pieces for sale/rent">
+          </div>
+          <div class="form-group" id="gst" style="display: none;">
+            <label for="gst">GST</label>
+            <input type="text" name="gst" value="" class="form-control" id="gst" placeholder="gst">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        
+
+      </div>
+    </div>
+  </form>
+  <script>
+    function setGstField(value) {
+
+      if (value === "BrandNew") {
+        document.getElementById("gst").style.display = "block";
+      } else {
+        document.getElementById("gst").style.display = "none";
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>
