@@ -11,13 +11,50 @@
 </head>
 
 <body>
-  <form action="/products" method="post">
+  <form action="/products" method="post" enctype="multipart/form-data" >
 
 
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Seller product upload</h5>
        
+
+
+
+        <div class="form-group">
+                
+          <label for="category">Product Type : </label>
+      <br>
+      <select name="category" id="category" >
+          
+         
+              <option name="categoryy" value="Electronics"> Electronics</option>
+              <option name="categoryy" value="TVsAppliances"> TVs & Appliances</option>
+              <option name="categoryy" value="Men"> Men</option>
+              <option name="categoryy" value="Women"> Women</option>
+              <option name="categoryy" value="BabyKids"> Baby&Kids</option>
+              <option name="categoryy" value="HomeFurniture"> Home-Furniture</option>
+              <option name="categoryy" value="books"> books</option>
+              <option name="categoryy" value="cosmetics"> cosmetics</option>
+              <option name="categoryy" value="sports"> sports</option>
+
+      </select>
+        </div>
+        <div class="form-group">
+                
+          <label for="subCategory">sub categories : </label>
+      <br>
+      <select name="subCategory" id="subCategory"  >
+              
+          
+      </select>
+        </div>
+
+
+
+
+
+        <br>
           <div class="form-group">
             <label for="productName">product name</label>
             <input type="text" class="form-control" id="productName" placeholder="Enter productName">
@@ -118,7 +155,7 @@
           <div class="form-group">
             <label for="FixedPrice">Fixed Price</label>
             <input type="text" name="FixedPrice" class="form-control" id="FixedPrice"
-              placeholder="Fixed price(for sell) or Monthly Rent  & deposit (for rentals)">
+              placeholder="Fixed price">
           </div>
 
           <div class="form-group">
@@ -142,7 +179,9 @@
       </div>
     </div>
   </form>
+  
   <script>
+ 
     function setGstField(value) {
 
       if (value === "BrandNew") {
@@ -151,9 +190,141 @@
         document.getElementById("gst").style.display = "none";
       }
     }
+
+var products={
+    
+        Electronics:[     
+            "Mobiles",
+            "Mobile Accessories",
+            "Laptops",
+            "Speakers",
+            "Camera",
+            "Gaming & Accessories" ]
+    ,
+    
+        TVsAppliances:[    
+            "Television",
+            "Washing Machine",
+            "Air Conditioners",
+            "Refrigerators",
+            "Kitchen Appliances"]
+    ,
+    
+        Men:[  
+            "Footwear",
+            "Clothing",
+            "Watches",
+            "Accessories",
+            "Suits, Blazers & Waistcoats"
+              ]
+    
+    ,  
+        Women:[   
+            "Clothing",
+            "Footwear",
+            "Jewellery",
+            "Accessories"
+             ]
+    ,
+    
+        BabyKids:[     
+            "Kids Clothing",
+           " Boys Clothing",
+           "Toys",
+           "Baby Care",
+           "School Supplies"
+
+           ]
+    ,
+    
+        HomeFurniture:[     
+            "Kitchen, Cookware & Serveware",
+            "Tableware & Dinnerware",
+            "Bed Room Furniture",
+            "Living Room Furniture",
+            "Furnishing",
+            "Kitchen Storage"
+
+           ]
+    ,
+    
+        sports:[   
+            "Sports",
+            "Music",
+            "Exercise Fitness",
+            "Industrial & Scientific tools"
+             ]
+    
+    ,
+    
+        books:[    
+            "Entrance Exams",
+            "Academics",
+            "Literature & Fiction",
+            "Non Fiction",
+            "Young Readers",
+            "Self-Help",
+            "E-Learning",
+            "Preorders",
+            "Indian Languages"
+
+            ]
+    ,
+    
+    
+        cosmetics:[    
+            "makeup", "hand soap", "facial cleanser", "body wash","perfumes"
+
+            ]
+    
+
+};
+
+
+ 
+
+  var main= document.getElementById('category');
+var sub = document.getElementById('subCategory');
+
+
+// Trigger the Event when main menu change occurs
+
+main.addEventListener('change',function(){
+
+// getting a selected option
+
+var selected_option = products[this.value];
+
+
+// removing the sub menu options using while loop
+
+
+
+while(sub.options.length > 0){
+
+sub.options.remove(0);
+
+}
+
+
+
+
+Array.from(selected_option).forEach(function(el){
+
+    let option  = new Option(el, el);
+
+    sub.appendChild(option);
+
+});
+
+});
+  
+
+
+
   </script>
 
-
+<script src="/public/script/categories.js"></script>
 </body>
 
 </html>
