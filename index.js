@@ -98,7 +98,9 @@ if(req.body.gst === ""){
     img3Url:req.files[2].path,
     FixedPrice:req.body.FixedPrice,
     monthlyRent:req.body.monthlyRent,
-    gst:inputGst
+    gst:inputGst,
+    description:req.body.description,
+    specifications:req.body.specifications
    });
    p.save(function(err){
        if(err){

@@ -12,6 +12,8 @@ const sellerProductSchema = new mongoose.Schema({
     img3Url:String,
     FixedPrice:Number,
     monthlyRent:Number,
-    gst:Number
+    gst:Number,
+    description:String,
+    specifications:String
 });
 module.exports= mongoose.model("sellerProduct", sellerProductSchema);
